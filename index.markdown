@@ -142,6 +142,9 @@ table {
 thead th {
     border-bottom: 1px solid #ddd; /* Solid line below the header */
   }
+.table_bottom td {
+    border-bottom: 1px solid #ddd; /* Solid line below the header */
+  }
 .table_img {
     width: 50px; /* Set image width */
     height: auto;
@@ -212,17 +215,29 @@ highlight {
   <tr>
     <td>
       <p align="justify" width="20%">
-        We provide the following materials through this open-source project: <br>
-        - Bill of materials <br>
-        - 3D-printing parts <br>
-        - Assembly instructions (coming soon)<br>
+        We currently provide the following materials from this open-source project as a preview. More detailed documentation will be updated soon.<br>
+        - Bill of materials
+          <a href="#bom">
+            <i class="fa-solid fa-link"></i>
+          </a>
+          <br>
+        - 3D-printing parts
+          <a href="#3d-printing">
+            <i class="fa-solid fa-link"></i>
+          </a>
+          <br>
+        - Assembly instructions
+          <a href="#assembly">
+            <i class="fa-solid fa-link"></i>
+          </a>
+          <br>
         - Python-based hardware control interface 
           <a href="https://github.com/UT-HCRL/LEGATO/blob/main/scripts/real_demo.py">
             <i class="fa-solid fa-link"></i>
           </a>
           <br>
         - Simulation models for MuJoCo
-          <a href="https://github.com/UT-HCRL/LEGATO/tree/main/models/grippers/vibrato">
+          <a href="https://github.com/UT-HCRL/LEGATO/tree/main/models/grippers/legato">
             <i class="fa-solid fa-link"></i>
           </a>
       </p>
@@ -236,8 +251,9 @@ highlight {
   <tr>
     <td>
 
-<h2>Bill of Materials</h2>
-
+<h2 id="bom">Bill of Materials</h2>
+  Here is the list of off-the-shelf parts required to assemble one set of shared gripper components. Although ISO bolts from McMaster-Carr are specified in this list, any compatible bolts may be used as alternatives.
+  <br>
   <table class="bom_table" width=800px>
     <thead>
       <tr>
@@ -249,216 +265,233 @@ highlight {
         <th align="center">Link</th>
       </tr>
     </thead>
-    <tr>
-      <td>
-        <img src="./src/figure/off-the-shelf/xm430.png" style="width:100;">
-      </td>
-      <td align="left">Dynamixel XM430-W350R</td>
-      <td>2</td>
-      <td>289.9</td>
-      <td>579.8</td>
-      <td>
-        <a href="https://www.robotis.us/dynamixel-xm430-w350-r/">
-          <i class="fa-solid fa-link"></i>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <img src="./src/figure/off-the-shelf/bearing.png" style="width:100;"></td>
-      <td align="left">
-        Flanged Ball Bearing <br>
-        (package of 4)
-      </td>
-      <td>1</td>
-      <td>6.89</td>
-      <td>20.67</td>
-      <td>
-        <a href="https://www.amazon.com/uxcell-MF115ZZ-5x11x4mm-Shielded-Bearings/dp/B0CGX9V7BJ/ref=sr_1_2_sspa?crid=3PF2S9LI7A1T4&dib=eyJ2IjoiMSJ9.J4ElrzRhUBgUWQ5Y6RcCKjgQ7qF7u3sM__EOKdUZXjqT0ajGkUfDOEpsJ8vVTjTyaS5v1V5RhTPS1In6qqYoRc9vublnByuAmWMiK4-ZmPcTWrAfn9S_tmF-m9Fus07cJBexfYLJ4q3ZvESbSCHYdciZZSZ_G69mMIOYpQXwcbRRc9KYk9ZCHtVfireuBIHu-7fZ_M3v2_lhZ7mCuzv28geOUFqQ-XfkYK_E42nJzc4.9B7G94vt0aaOiuilRCN1HGAgXWoqND7B69x1rg7OwZc&dib_tag=se&keywords=5x11%2Bflanged%2Bbearing&qid=1724780488&sprefix=5x11%2Bflanged%2Bb%2Caps%2C116&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1">
-          <i class="fa-solid fa-link"></i>
-        </a>
-      </td>
-    </tr>    <tr>
-      <td>
-        <img src="./src/figure/off-the-shelf/shoulder_bolt_m4x30mm.png" style="width:100;">
-      </td>
-      <td align="left"> Alloy Steel Shoulder Screws <br>
-        &#8960; 5mm x 30mm Shoulder, M4 x 0.7mm Thread</td>
-      <td>6</td>
-      <td>3.03</td>
-      <td>18.18</td>
-      <td>
-        <a href="https://www.mcmaster.com/92981A055/">
-          <i class="fa-solid fa-link"></i>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <img src="./src/figure/off-the-shelf/lock_nut_m4.png" style="width:100;">
-      </td>
-      <td align="left">M4 x 0.7mm Locknut <br>
-        (package of 100, 6 required)
-      </td>
-      <td>1</td>
-      <td>5.57</td>
-      <td>5.57</td>
-      <td>
-        <a href="https://www.mcmaster.com/90576A103/">
-          <i class="fa-solid fa-link"></i>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <img src="./src/figure/off-the-shelf/thread_m3.png" style="width:100;"></td>
-      <td align="left">
-        Heat Set Insert <br>
-        M3 x 0.5mm Thread Size, 3.8 mm Installed Length <br>
-        (Package of 100, 4 required)
-      </td>
-      <td>1</td>
-      <td>20.44</td>
-      <td>20.44</td>
-      <td>
-        <a href="https://www.mcmaster.com/94180A331/">
-          <i class="fa-solid fa-link"></i>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <img src="./src/figure/off-the-shelf/bolt_m3_30.png" style="width:100;">
-      </td>
-      <td align="left">
-        M3 x 30mm Long Socket Head Screws <br>
-        (pack of 50, 4 required)</td>
-      <td>1</td>
-      <td>13.68</td>
-      <td>13.68</td>
-      <td>
-        <a href="https://www.mcmaster.com/91290A130/">
-          <i class="fa-solid fa-link"></i>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <img src="./src/figure/off-the-shelf/bolt_m3_12.png" style="width:100;">
-      </td>
-      <td align="left">
-        M3 x 12mm Long Socket Head Screws <br>
-        (pack of 100, 10 required)
-      </td>
-      <td>1</td>
-      <td>11.29</td>
-      <td>11.29</td>
-      <td>
-        <a href="https://www.mcmaster.com/91290A117/">
-          <i class="fa-solid fa-link"></i>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <img src="./src/figure/off-the-shelf/nut_m3.png" style="width:100;"></td>
-      <td align="left">
-        M3 x 0.5 mm Nut <br>
-        (packge of 100, 10 required)
-      </td>
-      <td>1</td>
-      <td>2.81</td>
-      <td>2.81</td>
-      <td>
-        <a href="https://www.mcmaster.com/90591A250/">
-          <i class="fa-solid fa-link"></i>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <img src="./src/figure/off-the-shelf/bolt_m6_14.png" style="width:100;">
-      </td>
-      <td align="left">
-        M6 x 14mm Long Socket Head Screws <br>
-        (pack of 100, 4 required)
-      </td>
-      <td>1</td>
-      <td>19.69</td>
-      <td>19.69</td>
-      <td>
-        <a href="https://www.mcmaster.com/91290A319/">
-          <i class="fa-solid fa-link"></i>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <img src="./src/figure/off-the-shelf/nut_m6.png" style="width:100;">
-      </td>
-      <td align="left">
-        M6 x 1mm Nut <br>
-        (packge of 100, 4 required)
-      </td>
-      <td>1</td>
-      <td>x.xx</td>
-      <td>x.xx</td>
-      <td>
-        <a href="https://www.mcmaster.com/90591A151/">
-          <i class="fa-solid fa-link"></i>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <img src="./src/figure/off-the-shelf/bolt_m2_5_8.png" style="width:100;">
-      </td>
-      <td align="left">
-        M2.5 x 8mm Long Socket Head Screws <br>
-        (packge of 50, 2 required)
-      </td>
-      <td>1</td>
-      <td>11.42</td>
-      <td>11.42</td>
-      <td>
-        <a href="https://www.mcmaster.com/91290A102/">
-          <i class="fa-solid fa-link"></i>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <img src="./src/figure/off-the-shelf/bolt_m2_5_6.png" style="width:100;">
-      </td>
-      <td align="left">
-        M2.5 x 6mm Long Socket Head Screws <br>
-        (packge of 50, 8 required)
-      </td>
-      <td>1</td>
-      <td>11.56</td>
-      <td>11.56</td>
-      <td>
-        <a href="https://www.mcmaster.com/91290A101/">
-          <i class="fa-solid fa-link"></i>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <img src="./src/figure/off-the-shelf/bolt_m2_6.png" style="width:100;"></td>
-      <td align="left">
-        M2 x 6mm Long Socket Head Screws <br>
-        (packge of 100, 16-32 required)
-      </td>
-      <td>1</td>
-      <td>15.68</td>
-      <td>15.68</td>
-      <td>
-        <a href="https://www.mcmaster.com/91290A013/">
-          <i class="fa-solid fa-link"></i>
-        </a>
-      </td>
-    </tr>
+    <tbody>
+      <tr>
+        <td>
+          <img src="./src/figure/off-the-shelf/xm430.png" style="width:100;">
+        </td>
+        <td align="left">Dynamixel XM430-W350R</td>
+        <td>2</td>
+        <td>289.9</td>
+        <td>579.8</td>
+        <td>
+          <a href="https://www.robotis.us/dynamixel-xm430-w350-r/">
+            <i class="fa-solid fa-link"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./src/figure/off-the-shelf/t265.png" style="width:100;">
+        </td>
+        <td align="left">Realsense T265 <br>
+          (currently discontinued, <a href="https://www.xvisiotech.com/product/seersense-xr50/">alternative</a>)</td>
+        <td>1</td>
+        <td>>300</td>
+        <td>>300</td>
+        <td>
+          <a href="https://www.intelrealsense.com/visual-inertial-tracking-case-study/">
+            <i class="fa-solid fa-link"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./src/figure/off-the-shelf/bearing.png" style="width:100;"></td>
+        <td align="left">
+          Flanged Ball Bearing <br>
+          (package of 4)
+        </td>
+        <td>1</td>
+        <td>6.89</td>
+        <td>20.67</td>
+        <td>
+          <a href="https://www.amazon.com/uxcell-MF115ZZ-5x11x4mm-Shielded-Bearings/dp/B0CGX9V7BJ/ref=sr_1_2_sspa?crid=3PF2S9LI7A1T4&dib=eyJ2IjoiMSJ9.J4ElrzRhUBgUWQ5Y6RcCKjgQ7qF7u3sM__EOKdUZXjqT0ajGkUfDOEpsJ8vVTjTyaS5v1V5RhTPS1In6qqYoRc9vublnByuAmWMiK4-ZmPcTWrAfn9S_tmF-m9Fus07cJBexfYLJ4q3ZvESbSCHYdciZZSZ_G69mMIOYpQXwcbRRc9KYk9ZCHtVfireuBIHu-7fZ_M3v2_lhZ7mCuzv28geOUFqQ-XfkYK_E42nJzc4.9B7G94vt0aaOiuilRCN1HGAgXWoqND7B69x1rg7OwZc&dib_tag=se&keywords=5x11%2Bflanged%2Bbearing&qid=1724780488&sprefix=5x11%2Bflanged%2Bb%2Caps%2C116&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1">
+            <i class="fa-solid fa-link"></i>
+          </a>
+        </td>
+      </tr>    <tr>
+        <td>
+          <img src="./src/figure/off-the-shelf/shoulder_bolt_m4x30mm.png" style="width:100;">
+        </td>
+        <td align="left"> Alloy Steel Shoulder Screws <br>
+          &#8960; 5mm x 30mm Shoulder, M4 x 0.7mm Thread</td>
+        <td>6</td>
+        <td>3.03</td>
+        <td>18.18</td>
+        <td>
+          <a href="https://www.mcmaster.com/92981A055/">
+            <i class="fa-solid fa-link"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./src/figure/off-the-shelf/lock_nut_m4.png" style="width:100;">
+        </td>
+        <td align="left">M4 x 0.7mm Locknut <br>
+          (package of 100, 6 required)
+        </td>
+        <td>1</td>
+        <td>5.57</td>
+        <td>5.57</td>
+        <td>
+          <a href="https://www.mcmaster.com/90576A103/">
+            <i class="fa-solid fa-link"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./src/figure/off-the-shelf/thread_m3.png" style="width:100;"></td>
+        <td align="left">
+          Heat Set Insert <br>
+          M3 x 0.5mm Thread Size, 3.8 mm Installed Length <br>
+          (Package of 100, 4 required)
+        </td>
+        <td>1</td>
+        <td>20.44</td>
+        <td>20.44</td>
+        <td>
+          <a href="https://www.mcmaster.com/94180A331/">
+            <i class="fa-solid fa-link"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./src/figure/off-the-shelf/bolt_m3_30.png" style="width:100;">
+        </td>
+        <td align="left">
+          M3 x 30mm Long Socket Head Screws <br>
+          (pack of 50, 4 required)</td>
+        <td>1</td>
+        <td>13.68</td>
+        <td>13.68</td>
+        <td>
+          <a href="https://www.mcmaster.com/91290A130/">
+            <i class="fa-solid fa-link"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./src/figure/off-the-shelf/bolt_m3_12.png" style="width:100;">
+        </td>
+        <td align="left">
+          M3 x 12mm Long Socket Head Screws <br>
+          (pack of 100, 10 required)
+        </td>
+        <td>1</td>
+        <td>11.29</td>
+        <td>11.29</td>
+        <td>
+          <a href="https://www.mcmaster.com/91290A117/">
+            <i class="fa-solid fa-link"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./src/figure/off-the-shelf/nut_m3.png" style="width:100;"></td>
+        <td align="left">
+          M3 x 0.5 mm Nut <br>
+          (packge of 100, 10 required)
+        </td>
+        <td>1</td>
+        <td>2.81</td>
+        <td>2.81</td>
+        <td>
+          <a href="https://www.mcmaster.com/90591A250/">
+            <i class="fa-solid fa-link"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./src/figure/off-the-shelf/bolt_m6_14.png" style="width:100;">
+        </td>
+        <td align="left">
+          M6 x 14mm Long Socket Head Screws <br>
+          (pack of 100, 4-6 required)
+        </td>
+        <td>1</td>
+        <td>19.69</td>
+        <td>19.69</td>
+        <td>
+          <a href="https://www.mcmaster.com/91290A319/">
+            <i class="fa-solid fa-link"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./src/figure/off-the-shelf/nut_m6.png" style="width:100;">
+        </td>
+        <td align="left">
+          M6 x 1mm Nut <br>
+          (packge of 100, 4-6 required)
+        </td>
+        <td>1</td>
+        <td>3.14</td>
+        <td>3.14</td>
+        <td>
+          <a href="https://www.mcmaster.com/90591A151/">
+            <i class="fa-solid fa-link"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./src/figure/off-the-shelf/bolt_m2_5_8.png" style="width:100;">
+        </td>
+        <td align="left">
+          M2.5 x 8mm Long Socket Head Screws <br>
+          (packge of 50, 2 required)
+        </td>
+        <td>1</td>
+        <td>11.42</td>
+        <td>11.42</td>
+        <td>
+          <a href="https://www.mcmaster.com/91290A102/">
+            <i class="fa-solid fa-link"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./src/figure/off-the-shelf/bolt_m2_5_6.png" style="width:100;">
+        </td>
+        <td align="left">
+          M2.5 x 6mm Long Socket Head Screws <br>
+          (packge of 50, 8 required)
+        </td>
+        <td>1</td>
+        <td>11.56</td>
+        <td>11.56</td>
+        <td>
+          <a href="https://www.mcmaster.com/91290A101/">
+            <i class="fa-solid fa-link"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./src/figure/off-the-shelf/bolt_m2_6.png" style="width:100;"></td>
+        <td align="left">
+          M2 x 6mm Long Socket Head Screws <br>
+          (packge of 100, 16-32 required)
+        </td>
+        <td>1</td>
+        <td>15.68</td>
+        <td>15.68</td>
+        <td>
+          <a href="https://www.mcmaster.com/91290A013/">
+            <i class="fa-solid fa-link"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
     <!-- Add more rows as needed -->
   </table>
 
@@ -473,163 +506,160 @@ highlight {
   <tr>
     <td>
 
-<h2> 3D-printing Parts</h2>
+<h2 id="3d-printing"> 3D-printing Parts</h2>
 
-<table class="bom_table">
-    <thead>
-    <tr>
-        <th></th>
-        <th>Item</th>
-        <th>Material</th>
-        <th>Quantity</th>
-        <th>File</th>
-    </tr>
-    </thead>
-    <tr>
-        <td>
-          <img src="./src/figure/gripper/Base.png" style="width:100;">
-        </td>
-        <td>Base</td>
-        <td>PLA</td>
-        <td>1</td>
-        <td>
-          <a href="./src/stl/gripper/Base.STL" download>
-            <i class="fa-solid fa-download"></i>
-          </a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-          <img src="./src/figure/gripper/Dynamixel_Mount.png" style="width:100;">
-        </td>
-        <td>Dynamixel Mount</td>
-        <td>PLA</td>
-        <td>2</td>
-        <td>
-          <a href="./src/stl/gripper/Dynamixel_Mount.STL" download>
-            <i class="fa-solid fa-download"></i>
-          </a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-          <img src="./src/figure/gripper/Finger_Link.png" style="width:100;">
-        </td>
-        <td>Finger Link</td>
-        <td>PLA</td>
-        <td>2</td>
-        <td>
-          <a href="./src/stl/gripper/Finger_Link.STL" download>
-            <i class="fa-solid fa-download"></i>
-          </a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-          <img src="./src/figure/gripper/Lower_Link.png" style="width:100;">
-        </td>
-        <td>Lower Link</td>
-        <td>PLA</td>
-        <td>2</td>
-        <td>
-          <a href="./src/stl/gripper/Lower_Link.STL" download>
-            <i class="fa-solid fa-download"></i>
-          </a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-          <img src="./src/figure/gripper/Upper_Link_Half.png" style="width:100;">
-        </td>
-        <td>Upper Link Half</td>
-        <td>PLA</td>
-        <td>4</td>
-        <td>
-          <a href="./src/stl/gripper/Upper_Link_Half.STL" download>
-            <i class="fa-solid fa-download"></i>
-          </a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-          <img src="./src/figure/gripper/Finger_Tip.png" style="width:100;">
-        </td>
-        <td>Finger Tip</td>
-        <td>TPU 95A</td>
-        <td>2</td>
-        <td>
-          coming<br>
-          soon
-        </td>
-    </tr>
-    <!-- Add more rows as needed -->
-</table>
-
-<h2>3D-printing Handles</h2>
-
+Here is the list of 3D-printed parts required to assemble one set of shared gripper components, along with optional handles for robots and a human demonstrator. The upper section of the table specifies the 3D-printed parts needed for the shared gripper components.
+<br>
 <table class="bom_table">
   <thead>
-    <tr>
-        <th></th>
-        <th>Item</th>
-        <th>Material</th>
-        <th>Quantity</th>
-        <th>File</th>
-    </tr>
+  <tr>
+      <th></th>
+      <th>Item</th>
+      <th>Material</th>
+      <th>Quantity</th>
+      <th>File</th>
+  </tr>
   </thead>
+  <tbody>
     <tr>
-        <td>
-          <img src="./src/figure/handle/Human_Handle.png" style="width:100;">
-        </td>
-        <td>Human Handle</td>
-        <td>PLA</td>
-        <td>1</td>
-        <td>
-          <a href="./src/stl/gripper/Human_Handle.STL" download>
-            <i class="fa-solid fa-download"></i>
-          </a>
-        </td>
+      <td>
+        <img src="./src/figure/gripper/Base.png" style="width:100;">
+      </td>
+      <td>Base</td>
+      <td>PLA</td>
+      <td>1</td>
+      <td>
+        <a href="./src/stl/gripper/Base.STL" download>
+          <i class="fa-solid fa-download"></i>
+        </a>
+      </td>
     </tr>
     <tr>
-        <td>
-          <img src="./src/figure/handle/Spot_Handle.png" style="width:100;">
-        </td>
-        <td>Spot Handle</td>
-        <td>PLA</td>
-        <td>1</td>
-        <td>
-          <a href="./src/stl/gripper/Spot_Handle.STL" download>
-            <i class="fa-solid fa-download"></i>
-          </a>
-        </td>
+      <td>
+        <img src="./src/figure/gripper/Dynamixel_Mount.png" style="width:100;">
+      </td>
+      <td>Dynamixel Mount</td>
+      <td>PLA</td>
+      <td>2</td>
+      <td>
+        <a href="./src/stl/gripper/Dynamixel_Mount.STL" download>
+          <i class="fa-solid fa-download"></i>
+        </a>
+      </td>
     </tr>
     <tr>
-        <td>
-          <img src="./src/figure/handle/Panda_Handle_1.png" style="width:100;">
-        </td>
-        <td>Panda Handle 1</td>
-        <td>PLA</td>
-        <td>1</td>
-        <td>
-          <a href="./src/stl/handle/Panda_Handle_1.STL" download>
-            <i class="fa-solid fa-download"></i>
-          </a>
-        </td>
+      <td>
+        <img src="./src/figure/gripper/Finger_Link.png" style="width:100;">
+      </td>
+      <td>Finger Link</td>
+      <td>PLA</td>
+      <td>2</td>
+      <td>
+        <a href="./src/stl/gripper/Finger_Link.STL" download>
+          <i class="fa-solid fa-download"></i>
+        </a>
+      </td>
     </tr>
     <tr>
-        <td>
-          <img src="./src/figure/handle/Panda_Handle_2.png" style="width:100;">
-        </td>
-        <td>Panda Handle 2</td>
-        <td>PLA</td>
-        <td>1</td>
-        <td>
-          <a href="./src/stl/handle/Panda_Handle_2.STL" download>
-            <i class="fa-solid fa-download"></i>
-          </a>
-        </td>
+      <td>
+        <img src="./src/figure/gripper/Lower_Link.png" style="width:100;">
+      </td>
+      <td>Lower Link</td>
+      <td>PLA</td>
+      <td>2</td>
+      <td>
+        <a href="./src/stl/gripper/Lower_Link.STL" download>
+          <i class="fa-solid fa-download"></i>
+        </a>
+      </td>
     </tr>
-    <!-- Add more rows as needed -->
+    <tr>
+      <td>
+        <img src="./src/figure/gripper/Upper_Link_Half.png" style="width:100;">
+      </td>
+      <td>Upper Link Half</td>
+      <td>PLA</td>
+      <td>4</td>
+      <td>
+        <a href="./src/stl/gripper/Upper_Link_Half.STL" download>
+          <i class="fa-solid fa-download"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+  <tbody class="table_bottom">
+  <tr>
+    <td>
+      <img src="./src/figure/gripper/Finger_Tip.png" style="width:100;">
+    </td>
+    <td>Finger Tip</td>
+    <td>TPU 95A</td>
+    <td>2</td>
+    <td>
+      coming<br>
+      soon
+    </td>
+  </tr>
+  </tbody>
+  <tbody class="table_bottom">
+  <tr>
+    <td>
+      <img src="./src/figure/handle/Human_Handle.png" style="width:100;">
+    </td>
+    <td>Human Handle</td>
+    <td>PLA</td>
+    <td>1</td>
+    <td>
+      <a href="./src/stl/gripper/Human_Handle.STL" download>
+        <i class="fa-solid fa-download"></i>
+      </a>
+    </td>
+  </tr>
+  </tbody>
+  <tbody class="table_bottom">
+  <tr>
+    <td>
+      <img src="./src/figure/handle/Spot_Handle.png" style="width:100;">
+    </td>
+    <td>Spot Handle</td>
+    <td>PLA</td>
+    <td>1</td>
+    <td>
+      <a href="./src/stl/gripper/Spot_Handle.STL" download>
+        <i class="fa-solid fa-download"></i>
+      </a>
+    </td>
+  </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>
+        <img src="./src/figure/handle/Panda_Handle_1.png" style="width:100;">
+      </td>
+      <td>Panda Handle 1</td>
+      <td>PLA</td>
+      <td>1</td>
+      <td>
+        <a href="./src/stl/handle/Panda_Handle_1.STL" download>
+          <i class="fa-solid fa-download"></i>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="./src/figure/handle/Panda_Handle_2.png" style="width:100;">
+      </td>
+      <td>Panda Handle 2</td>
+      <td>PLA</td>
+      <td>1</td>
+      <td>
+        <a href="./src/stl/handle/Panda_Handle_2.STL" download>
+          <i class="fa-solid fa-download"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+  <!-- Add more rows as needed -->
 </table>
 
   </td>
@@ -637,9 +667,41 @@ highlight {
 </table>
 
 <hr>
-<center><h1>Citation</h1></center>
 
 <table align=center width=800px>
+  <tr>
+    <td>
+
+<h2 id="assembly">Assembly Instruction</h2>
+
+Follow the video instructions below to assemble the shareable gripper components. Before assembly, use an appropriate press machine, such as 
+<a href="https://www.amazon.com/3DZWMAN-Vertical-Pressing-Machine-Printing/dp/B0BBSGG2S2/ref=sr_1_1_sspa?dib=eyJ2IjoiMSJ9.xwi5Z8Ac4o3C40kX2ATKJwKk8eZqPJHUw5pG6q7IVynCw7m4Z9II0Yw5ikXZk_0J-L52c3eaPi4GRs3z4IvAQMZc_wPrsfLugLdTQ4cVNZFyAKIVB0zg7ocLbHI-CUrX0vZlf7S26PNKQyEf-MfhjPZOZKIcOYGnmbMcErEFxARiBBNik6BFuaAgT36ClVihWKKAkYPFNyHZ2yHCe8kG__21kJIc-RTuV_TYTJRv-aU.vILq6JWPMIB46ILT9h3FteaFW0lgeJ6shOrOTYJAYQk&dib_tag=se&keywords=heat+insert+tool&qid=1731134766&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1
+">
+  <i class="fa-solid fa-link"></i>
+</a>, 
+to heat-set inserts into the <i>Base</i> part.
+<table border="0" cellspacing="10" cellpadding="0" align="center">
+  <tbody>
+    <tr>
+      <td align="center" valign="middle">
+        <video muted autoplay loop width="598">
+          <source src="./src/video/assembly.mp4"  type="video/mp4">
+        </video>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</td>
+</tr>
+</table>
+<hr>
+<table align=center width=800px>
+  <tr>
+    <td>
+      <h2>Citation</h2>
+    </td>
+  </tr>
   <tr>
     <td>
     <!-- <left> -->
@@ -649,7 +711,7 @@ highlight {
         author={Seo, Mingyo and Park, H. Andy and Yuan, Shenli and Zhu, Yuke and
           and Sentis, Luis},
         year={2024}
-        eprint={XXXX.XXXXXX},
+        eprint={2411.03682},
         archivePrefix={arXiv},
         primaryClass={cs.RO}
       }
@@ -661,7 +723,7 @@ highlight {
 
 <div class="page-width-background">
 <div style="height: 4px;"></div>
-<center><h2 align="center">Acknowledgement</h2></center>
+<h2 align="center">Acknowledgement</h2>
 <table align=center width=800px>
   <tr>
     <td> 
