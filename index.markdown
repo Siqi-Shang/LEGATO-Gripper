@@ -250,10 +250,12 @@ highlight {
 <table align=center width=800px>
   <tr>
     <td>
-
-<h2 id="bom">Bill of Materials</h2>
-  Here is the list of off-the-shelf parts required to assemble one set of shared gripper components. Although ISO bolts from McMaster-Carr are specified in this list, any compatible bolts may be used as alternatives.
-  <br>
+      <h2 id="bom">Bill of Materials</h2>
+        Here is the list of off-the-shelf parts required to assemble one set of shared gripper components. Although ISO bolts from McMaster-Carr are specified in this list, any compatible bolts may be used as alternatives.
+    </td>
+  </tr>
+  <tr>
+    <td>
   <table class="bom_table" width=800px>
     <thead>
       <tr>
@@ -509,7 +511,10 @@ highlight {
 <h2 id="3d-printing"> 3D-printing Parts</h2>
 
 Here is the list of 3D-printed parts required to assemble one set of shared gripper components, along with optional handles for robots and a human demonstrator. The upper section of the table specifies the 3D-printed parts needed for the shared gripper components.
-<br>
+    </td>
+  </tr>
+  <tr>
+    <td>
 <table class="bom_table">
   <thead>
   <tr>
@@ -680,6 +685,10 @@ Follow the video instructions below to assemble the shareable gripper components
   <i class="fa-solid fa-link"></i>
 </a>, 
 to heat-set inserts into the <i>Base</i> part.
+    </td>
+  </tr>
+  <tr>
+    <td>
 <table border="0" cellspacing="10" cellpadding="0" align="center">
   <tbody>
     <tr>
