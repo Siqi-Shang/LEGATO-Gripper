@@ -615,7 +615,7 @@ Here is the list of 3D-printed parts required to assemble one set of shared grip
     <td>PLA</td>
     <td>1</td>
     <td>
-      <a href="./src/stl/gripper/Human_Handle.STL" download>
+      <a href="./src/stl/handle/Human_Handle.STL" download>
         <i class="fa-solid fa-download"></i>
       </a>
     </td>
@@ -630,7 +630,7 @@ Here is the list of 3D-printed parts required to assemble one set of shared grip
     <td>PLA</td>
     <td>1</td>
     <td>
-      <a href="./src/stl/gripper/Spot_Handle.STL" download>
+      <a href="./src/stl/handle/Spot_Handle.STL" download>
         <i class="fa-solid fa-download"></i>
       </a>
     </td>
