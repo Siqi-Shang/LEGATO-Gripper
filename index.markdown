@@ -567,26 +567,26 @@ Here is the list of 3D-printed parts required to assemble one set of shared grip
     </tr>
     <tr>
       <td>
-        <img src="./src/figure/gripper/Lower_Link.png" style="width:100;">
+        <img src="./src/figure/gripper/Upper_Link.png" style="width:100;">
       </td>
       <td>Lower Link</td>
       <td>PLA</td>
       <td>2</td>
       <td>
-        <a href="./src/stl/gripper/Lower_Link.STL" download>
+        <a href="./src/stl/gripper/Upper_Link.STL" download>
           <i class="fa-solid fa-download"></i>
         </a>
       </td>
     </tr>
     <tr>
       <td>
-        <img src="./src/figure/gripper/Upper_Link_Half.png" style="width:100;">
+        <img src="./src/figure/gripper/Lower_Link_Half.png" style="width:100;">
       </td>
       <td>Upper Link Half</td>
       <td>PLA</td>
       <td>4</td>
       <td>
-        <a href="./src/stl/gripper/Upper_Link_Half.STL" download>
+        <a href="./src/stl/gripper/Lower_Link_Half.STL" download>
           <i class="fa-solid fa-download"></i>
         </a>
       </td>
