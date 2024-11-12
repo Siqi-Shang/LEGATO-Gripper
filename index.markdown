@@ -569,7 +569,7 @@ Here is the list of 3D-printed parts required to assemble one set of shared grip
       <td>
         <img src="./src/figure/gripper/Upper_Link.png" style="width:100;">
       </td>
-      <td>Lower Link</td>
+      <td>Upper Link</td>
       <td>PLA</td>
       <td>2</td>
       <td>
@@ -582,7 +582,7 @@ Here is the list of 3D-printed parts required to assemble one set of shared grip
       <td>
         <img src="./src/figure/gripper/Lower_Link_Half.png" style="width:100;">
       </td>
-      <td>Upper Link Half</td>
+      <td>Lower Link Half</td>
       <td>PLA</td>
       <td>4</td>
       <td>
