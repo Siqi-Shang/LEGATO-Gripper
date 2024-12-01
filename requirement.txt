@@ -1,0 +1,6 @@
+scipy
+numpy
+opencv-python
+dynamixel_sdk
+pynput
+pyrealsense2==2.53.1.4623
