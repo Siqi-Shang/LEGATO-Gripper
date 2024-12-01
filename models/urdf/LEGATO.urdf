@@ -1,0 +1,273 @@
+<?xml version="1.0"?>
+<robot name="legato_gripper">
+
+  <!-- Base Link -->
+  <link name="base">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/base.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0 0 0"  rpy="0 0 1.57079633"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/t265.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0.0091 0.0525 0.018"  rpy="0 -1.57079633 0"/>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="meshes/base.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0 0 0"  rpy="0 0 1.57079633"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/t265.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0.0091 0.0525 0.018"  rpy="0 -1.57079633 0"/>
+    </collision>
+
+    <inertial>
+      <origin xyz="0.00187 0.0124 0.033"/>
+      <mass value="163.98e-03"/>
+      <inertia ixx="147.87942e-06" ixy="-12.24474e-06" ixz="-3.40457e-06" iyy="178.14255e-06" iyz="42.8782e-06" izz="224.8969e-06"/>
+    </inertial>
+  </link>
+
+  <link name="left_link_lower">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/link_lower.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0 0 0"  rpy="1.57079633 0 1.57079633"/>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="meshes/link_lower.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0 0 0"  rpy="1.57079633 0 1.57079633"/>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 0.03796"/>
+      <mass value="9.37e-03"/>
+      <inertia ixx="5.82620e-9" iyy="4.47730e-9" izz="2.00989e-9"/>
+    </inertial>
+  </link>
+
+  <link name="left_link_finger">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/link_finger.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0 0 0"  rpy="0 0 -1.57079633"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/finger_tip.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="-0.03131 0 0.0534"  rpy="1.57079633 0 0"/>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="meshes/link_finger.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0 0 0"  rpy="0 0 -1.57079633"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/finger_tip.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="-0.03131 0 0.0534"  rpy="1.57079633 0 0"/>
+    </collision>
+
+    <inertial>
+      <origin xyz="0.01598 0 0.6940"/>
+      <mass value="25.2e-03"/>
+      <inertia ixx="4.64387e-06" ixy="-44.32392e-06" ixz="42.72353e-06" iyy="0" iyz="7.13596e-06" izz="0"/>
+    </inertial>
+  </link>
+
+  <link name="left_link_upper">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/link_upper.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0 0 0"  rpy="1.57079633 0 1.57079633"/>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="meshes/link_upper.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0 0 0"  rpy="1.57079633 0 1.57079633"/>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 0.0404"/>
+      <mass value="7.88e-03"/>
+      <inertia ixx="3.61108e-09" iyy="4.01711e-09" izz="0.74967e-09"/>
+    </inertial>
+  </link>
+
+  <link name="left_coupler_finger"/>
+  <link name="left_coupler_upper"/>
+
+  <joint name="joint_left_driver" type="revolute">
+    <parent link="base"/>
+    <child link="left_link_lower"/>
+    <origin xyz="0.02975  0 0.05325"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="0" upper="1.5708" effort="20" velocity="1.0"/>
+  </joint>
+
+  <joint name="joint_left_finger" type="revolute">
+    <parent link="left_link_lower"/>
+    <child link="left_link_finger"/>
+    <origin xyz="0 0 0.08"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5708" upper="0" effort="20" velocity="1.0"/>
+  </joint>
+
+  <joint name="joint_left_upper" type="revolute">
+    <parent link="base"/>
+    <child link="left_link_upper"/>
+    <origin xyz="0.00875 0 0.07425"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="0" upper="1.5708" effort="20" velocity="1.0"/>
+  </joint>
+
+  <joint name="joint_left_coupler_finger" type="fixed">
+    <parent link="left_link_finger"/>
+    <child link="left_coupler_finger"/>
+    <origin xyz="-0.021 0 0.021"/>
+  </joint>
+
+  <joint name="joint_left_coupler_upper" type="fixed">
+    <parent link="left_link_upper"/>
+    <child link="left_coupler_upper"/>
+    <origin xyz="0 0 0.08" rpy="1.5708 0 0"/>
+  </joint>
+
+  <link name="right_link_lower">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/link_lower.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0 0 0"  rpy="1.57079633 0 -1.57079633"/>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="meshes/link_lower.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0 0 0"  rpy="1.57079633 0 -1.57079633"/>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 0.03796"/>
+      <mass value="9.37e-03"/>
+      <inertia ixx="5.82620e-9" iyy="4.47730e-9" izz="2.00989e-9"/>
+    </inertial>
+  </link>
+
+  <link name="right_link_finger">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/link_finger.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0 0 0"  rpy="0 0 1.57079633"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/finger_tip.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0.03131 0 0.0534"  rpy="1.57079633 0 3.14159266"/>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="meshes/link_finger.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0 0 0"  rpy="0 0 1.57079633"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/finger_tip.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0.03131 0 0.0534"  rpy="1.57079633 0 3.14159266"/>
+    </collision>
+
+    <inertial>
+      <origin xyz="-0.01598 0 0.6940"/>
+      <mass value="25.2e-03"/>
+      <inertia ixx="4.64387e-06" ixy="-44.32392e-06" ixz="42.72353e-06" iyy="0" iyz="-7.13596e-06" izz="0"/>
+    </inertial>
+  </link>
+
+  <link name="right_link_upper">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/link_upper.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0 0 0"  rpy="1.57079633 0 -1.57079633"/>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="meshes/link_upper.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0 0 0"  rpy="1.57079633 0 -1.57079633"/>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 0.0404"/>
+      <mass value="7.88e-03"/>
+      <inertia ixx="3.61108e-09" iyy="4.01711e-09" izz="0.74967e-09"/>
+    </inertial>
+  </link>
+
+  <link name="right_coupler_finger"/>
+  <link name="right_coupler_upper"/>
+
+  <joint name="joint_right_driver" type="revolute">
+    <parent link="base"/>
+    <child link="right_link_lower"/>
+    <origin xyz="-0.02975  0 0.05325"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5708" upper="0" effort="20" velocity="1.0"/>
+  </joint>
+
+  <joint name="joint_right_finger" type="revolute">
+    <parent link="right_link_lower"/>
+    <child link="right_link_finger"/>
+    <origin xyz="0 0 0.08"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="0" upper="1.5708" effort="20" velocity="1.0"/>
+  </joint>
+
+  <joint name="joint_right_upper" type="revolute">
+    <parent link="base"/>
+    <child link="right_link_upper"/>
+    <origin xyz="-0.00875 0 0.07425"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5708" upper="0" effort="20" velocity="1.0"/>
+  </joint>
+
+  <joint name="joint_right_coupler_finger" type="fixed">
+    <parent link="right_link_finger"/>
+    <child link="right_coupler_finger"/>
+    <origin xyz="0.021 0 0.021"/>
+  </joint>
+
+  <joint name="joint_right_coupler_upper" type="fixed">
+    <parent link="right_link_upper"/>
+    <child link="right_coupler_upper"/>
+    <origin xyz="0 0 0.08" rpy="1.5708 0 0"/>
+  </joint>
+
+</robot>
