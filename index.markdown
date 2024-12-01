@@ -193,29 +193,33 @@ highlight {
   </tr>
 </table>
 
-
 <hr>
 
 <table align=center width=800px>
   <tr>
     <td>
-      <p align="justify" width="20%">
       <h2>Overview</h2>
-      <b>LEGATO Gripper</b> is a hand-held gripper developed in <a href="https://ut-hcrl.github.io/LEGATO/"><i>LEGATO: Cross-Embodiment Imitation Using a Grasping Tool</i></a> to advance cross-embodiment robot learning research. Created by <a href="https://mingyoseo.com/">Mingyo Seo</a> and <a href="https://yuanshenli.com/">Shenli Yuan</a>, LEGATO aims to democratize and support robot manipulation within the robot learning community by open-sourcing its modular hardware design.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p align="justify" width="20%">
+        <b>LEGATO Gripper</b> is a hand-held gripper developed in <a href="https://ut-hcrl.github.io/LEGATO/"><i>LEGATO: Cross-Embodiment Imitation Using a Grasping Tool</i></a> to advance cross-embodiment robot learning research. Created by <a href="https://mingyoseo.com/">Mingyo Seo</a> and <a href="https://yuanshenli.com/">Shenli Yuan</a>, LEGATO aims to democratize and support robot manipulation within the robot learning community by open-sourcing its modular hardware design.
       </p>
     </td>
   </tr>
   <tr>
     <td align="center" valign="middle">
-      <a href="./src/figure/overview.png"> 
-        <img src="./src/figure/overview.png" style="width:512;">
+      <a href="./src/figure/hardware.png"> 
+        <img src="./src/figure/hardware.png" style="width:512;">
       </a>
+      <br>
     </td>
   </tr> 
   <tr>
     <td>
       <p align="justify" width="20%">
-        We currently provide the following materials from this open-source project as a preview. More detailed documentation will be updated soon.<br>
+        We currently provide the following materials from this open-source project.<br>
         - Bill of materials
           <a href="#bom">
             <i class="fa-solid fa-link"></i>
@@ -231,16 +235,17 @@ highlight {
             <i class="fa-solid fa-link"></i>
           </a>
           <br>
-        - Python-based hardware control interface 
-          <a href="https://github.com/UT-HCRL/LEGATO/blob/main/scripts/real_demo.py">
+        - Python-based HW control codebase 
+          <a href="https://github.com/UT-HCRL/LEGATO-Gripper/tree/hardware">
             <i class="fa-solid fa-link"></i>
           </a>
           <br>
-        - Simulation models for MuJoCo
-          <a href="https://github.com/UT-HCRL/LEGATO/tree/main/models/grippers/legato">
+        - Simulation models
+          <a href="https://github.com/UT-HCRL/LEGATO-Gripper/tree/models">
             <i class="fa-solid fa-link"></i>
           </a>
       </p>
+      <br>
     </td>
   </tr>
 </table>
@@ -251,7 +256,13 @@ highlight {
   <tr>
     <td>
       <h2 id="bom">Bill of Materials</h2>
-        Here is the list of off-the-shelf parts required to assemble one set of shared gripper components. Although ISO bolts from McMaster-Carr are specified in this list, any compatible bolts may be used as alternatives.
+    </td>
+  </tr>
+  <tr>
+    <td>
+        <p align="justify" width="20%">
+          Here is the list of off-the-shelf parts required to assemble one set of shared gripper components. Although ISO bolts from McMaster-Carr are specified in this list, any compatible bolts may be used as alternatives.
+        </p>
     </td>
   </tr>
   <tr>
@@ -272,12 +283,27 @@ highlight {
         <td>
           <img src="./src/figure/off-the-shelf/xm430.png" style="width:100;">
         </td>
-        <td align="left">Dynamixel XM430-W350R</td>
-        <td>2</td>
-        <td>289.9</td>
-        <td>579.8</td>
+        <td align="left">
+          Dynamixel XM430-W350Rx<br>
+          HN12-I101 Set
+        </td>
+        <td>
+          2<br>
+          2
+        </td>
+        <td>
+          289.9<br>
+          17.80
+          </td>
+        <td>
+          579.8<br>
+          35.60
+        </td>
         <td>
           <a href="https://www.robotis.us/dynamixel-xm430-w350-r/">
+            <i class="fa-solid fa-link"></i>
+          </a><br>
+          <a href="https://www.robotis.us/hn12-i101-set/">
             <i class="fa-solid fa-link"></i>
           </a>
         </td>
@@ -302,9 +328,9 @@ highlight {
           <img src="./src/figure/off-the-shelf/bearing.png" style="width:100;"></td>
         <td align="left">
           Flanged Ball Bearing <br>
-          (package of 4, 3 required)
+          (package of 4, 12 required)
         </td>
-        <td>1</td>
+        <td>3</td>
         <td>6.89</td>
         <td>20.67</td>
         <td>
@@ -496,8 +522,16 @@ highlight {
     </tbody>
     <!-- Add more rows as needed -->
   </table>
-
-  Other than the above components, the follow materials, 3D-printing filaments, and friction tapes are requred to assembly one set of the Gripper. The below table is the example of the items, but any compatible alternative can be used.
+    <br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p align="justify" width="20%">
+        Other than the above components, the follow materials, 3D-printing filaments, and friction tapes are requred to assembly one set of the Gripper. The below table is the example of the items, but any compatible alternative can be used.
+      </p>
+    </td>
+  </tr>
   <tr>
     <td>
       <table class="bom_table" width=800px>
@@ -510,19 +544,19 @@ highlight {
         </thead>
         <tbody>
           <tr>
-            <td>PLA 3D-printing filment</td>
-            <td>19.99</td>
+            <td>Serial communication & power converter</td>
+            <td>59.70</td>
             <td>
-              <a href="https://us.store.bambulab.com/collections/bambu-lab-3d-printer-filament/products/pla-basic-filament?variant=40988815556744">
+              <a href="https://www.robotis.us/dynamixel-starter-set-us/">
                 <i class="fa-solid fa-link"></i>
               </a>
             </td>
           </tr>
           <tr>
-            <td>Serial communication & power converter</td>
-            <td>59.70</td>
+            <td>PLA 3D-printing filment</td>
+            <td>19.99</td>
             <td>
-              <a href="https://www.robotis.us/dynamixel-starter-set-us/">
+              <a href="https://us.store.bambulab.com/collections/bambu-lab-3d-printer-filament/products/pla-basic-filament?variant=40988815556744">
                 <i class="fa-solid fa-link"></i>
               </a>
             </td>
@@ -545,24 +579,35 @@ highlight {
               </a>
             </td>
           </tr>
+          <tr>
+            <td>Bluetooth button</td>
+            <td>39.95</td>
+            <td>
+              <a href="https://www.adafruit.com/product/3372">
+                <i class="fa-solid fa-link"></i>
+              </a>
+            </td>
+          </tr>
         </tbody>
       </table>
-    </td>
-  </tr>
+      <br>
     </td>
   </tr>
 </table>
-
 
 <hr>
 
 <table align=center width=800px>
   <tr>
     <td>
-
-<h2 id="3d-printing"> 3D-printing Parts</h2>
-
-Here is the list of 3D-printed parts required to assemble one set of shared gripper components, along with optional handles for robots and a human demonstrator. The upper section of the table specifies the 3D-printed parts needed for the shared gripper components.
+      <h2 id="3d-printing"> 3D-printing Parts</h2>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p align="justify" width="20%">
+        Here is the list of 3D-printed parts required to assemble one set of shared gripper components, along with optional handles for robots and a human demonstrator. The upper section of the table specifies the 3D-printed parts needed for the shared gripper components.
+      </p>
     </td>
   </tr>
   <tr>
@@ -718,8 +763,8 @@ Here is the list of 3D-printed parts required to assemble one set of shared grip
   </tbody>
   <!-- Add more rows as needed -->
 </table>
-
-  </td>
+    <br>
+    </td>
   </tr>
 </table>
 
@@ -729,32 +774,33 @@ Here is the list of 3D-printed parts required to assemble one set of shared grip
   <tr>
     <td>
       <h2 id="assembly">Assembly Instruction</h2>
-      Follow the video instructions below to assemble the shareable gripper components. Before assembly, use an appropriate press machine, such as 
-      <a href="https://www.amazon.com/3DZWMAN-Vertical-Pressing-Machine-Printing/dp/B0BBSGG2S2/ref=sr_1_1_sspa?dib=eyJ2IjoiMSJ9.xwi5Z8Ac4o3C40kX2ATKJwKk8eZqPJHUw5pG6q7IVynCw7m4Z9II0Yw5ikXZk_0J-L52c3eaPi4GRs3z4IvAQMZc_wPrsfLugLdTQ4cVNZFyAKIVB0zg7ocLbHI-CUrX0vZlf7S26PNKQyEf-MfhjPZOZKIcOYGnmbMcErEFxARiBBNik6BFuaAgT36ClVihWKKAkYPFNyHZ2yHCe8kG__21kJIc-RTuV_TYTJRv-aU.vILq6JWPMIB46ILT9h3FteaFW0lgeJ6shOrOTYJAYQk&dib_tag=se&keywords=heat+insert+tool&qid=1731134766&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1
-      ">
-        <i class="fa-solid fa-link"></i>
-      </a>, 
-      to heat-set inserts into the <i>Base</i> part.
     </td>
   </tr>
   <tr>
     <td>
-  <table border="0" cellspacing="10" cellpadding="0" align="center">
-    <tbody>
-      <tr>
-        <td align="center" valign="middle">
-          <video muted controls autoplay loop width="598">
-            <source src="./src/video/assembly.mp4"  type="video/mp4">
-          </video>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+      <p align="justify" width="20%">
+        Follow the video instructions below to assemble the shareable gripper components. Before assembly, use an appropriate press machine (example 
+        <a href="https://www.amazon.com/3DZWMAN-Vertical-Pressing-Machine-Printing/dp/B0BBSGG2S2/ref=sr_1_1_sspa?dib=eyJ2IjoiMSJ9.xwi5Z8Ac4o3C40kX2ATKJwKk8eZqPJHUw5pG6q7IVynCw7m4Z9II0Yw5ikXZk_0J-L52c3eaPi4GRs3z4IvAQMZc_wPrsfLugLdTQ4cVNZFyAKIVB0zg7ocLbHI-CUrX0vZlf7S26PNKQyEf-MfhjPZOZKIcOYGnmbMcErEFxARiBBNik6BFuaAgT36ClVihWKKAkYPFNyHZ2yHCe8kG__21kJIc-RTuV_TYTJRv-aU.vILq6JWPMIB46ILT9h3FteaFW0lgeJ6shOrOTYJAYQk&dib_tag=se&keywords=heat+insert+tool&qid=1731134766&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1
+        ">
+          <i class="fa-solid fa-link"></i>
+        </a>) 
+        to heat-set inserts into the <i>Base</i> part.
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">
+      <video muted controls autoplay loop width="598">
+        <source src="./src/video/assembly.mp4"  type="video/mp4">
+      </video>
+      <br>
     </td>
   </tr>
   <tr>
     <td>
-      For use, you can assemble the sharabe gripper with the corresponding handles. Currently, we provide three types of handles: one for a human demonstrator, one for the Franka Emika <i>Panda</i>, and one for the Boston Dynamics <i>Spot</i>. The assembly instructions are shown in the following figures.
+      <p align="justify" width="20%">
+        For use, you can assemble the sharabe gripper with the corresponding handles. Currently, we provide three types of handles: one for a human demonstrator, one for the Franka Emika <i>Panda</i>, and one for the Boston Dynamics <i>Spot</i>. The assembly instructions are shown in the following figures.
+      </p>
     </td>
   </tr>
   <tr>
@@ -764,26 +810,36 @@ Here is the list of 3D-printed parts required to assemble one set of shared grip
       <tr>
         <td align="center" valign="middle">
           <a href="./src/figure/assembly/human.png"> 
-            <img src="./src/figure/assembly/human.png" style="width:258;">
-          </a>
-        </td>
-        <td align="center" valign="middle">
-          <a href="./src/figure/assembly/panda.png"> 
-            <img src="./src/figure/assembly/panda.png" style="width:258;">
-          </a>
-        </td>
-        <td align="center" valign="middle">
-          <a href="./src/figure/assembly/spot.png"> 
-            <img src="./src/figure/assembly/spot.png" style="width:258;">
+            <img src="./src/figure/assembly/human.png" style="width:394;">
           </a>
         </td>
       </tr>
     </tbody>
   </table>
+  <br>
+  <table border="0" cellspacing="10" cellpadding="0" align="center">
+    <tbody>
+      <tr>
+        <td align="center" valign="middle">
+          <a href="./src/figure/assembly/panda.png"> 
+            <img src="./src/figure/assembly/panda.png" style="width:394;">
+          </a>
+        </td>
+        <td align="center" valign="middle">
+          <a href="./src/figure/assembly/spot.png"> 
+            <img src="./src/figure/assembly/spot.png" style="width:394;">
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
     </td>
   </tr>
 </table>
+
 <hr>
+
 <table align=center width=800px>
   <tr>
     <td>
@@ -807,9 +863,13 @@ Here is the list of 3D-printed parts required to assemble one set of shared grip
     <!-- </left> -->
     </td>
   </tr>
+  <tr>
+    <td>
+    </td>
+  </tr>
 </table>
 
-<div class="page-width-background" style="background-color=#d9d2e9;">
+<div class="page-width-background">
 <div style="height: 4px;"></div>
 <h2 align="center">License</h2>
 <table align=center width=800px>
@@ -821,20 +881,5 @@ Here is the list of 3D-printed parts required to assemble one set of shared grip
     </td>
   </tr>
 </table>
-<div style="height: 20px;"></div>
-</div>
-
-<div class="page-width-background">
-<div style="height: 4px;"></div>
-<h2 align="center">Acknowledgement</h2>
-<table align=center width=800px>
-  <tr>
-    <td> 
-      <p align="justify" width="20%">
-        This work was conducted during Mingyo Seo's internship at the AI Institute. We thank Rutav Shah and Minkyung Kim for providing feedback on this manuscript. We thank Dr. Osman Dogan Yirmibesoglu for designing the fin ray style compliant fingers and helping with hardware prototyping. We thank Mitchell Pryor and Fabian Parra for their support with the real Spot demonstration. We acknowledge the support of the AI Institute and the Office of Naval Research (N00014-22-1-2204).
-      </p>
-    </td>
-  </tr>
-</table>
-<div style="height: 20px;"></div>
+<div style="height: 16px;"></div>
 </div>
